@@ -90,6 +90,10 @@ UserSchema.methods.createSession = function() {
 }
 
 // Model Methods //
+UserSchema.statics.getJWTSecret = () => {
+    return jwtSecret;
+}
+
 UserSchema.statics.findByIdAndToken = function(_id,token) {
     // Finds user by ID and token
     // Used in Auth Middleware (verifySession)
@@ -104,7 +108,6 @@ UserSchema.statics.findByIdAndToken = function(_id,token) {
 
 UserSchema.statics.findByCredentials = function(email,password) {
     let User = this;
-
     return User.findOne({ email }).then((user) => {
         if(!user) {
             return Promise.reject();
