@@ -50,8 +50,8 @@ export class WebReqInterceptor implements HttpInterceptor {
           // this code will run when the access token has been refreshed
           observer.next();
           observer.complete();
-        })
-      })
+        });
+      });
     } else {
       this.refreshingAccessToken = true;
       // we want to call a method in the auth service to send a request to refresh the access token
@@ -61,7 +61,7 @@ export class WebReqInterceptor implements HttpInterceptor {
           this.refreshingAccessToken = false;
           this.accessTokenRefreshed.next();
         })
-      )
+      );
     }
 
   }
