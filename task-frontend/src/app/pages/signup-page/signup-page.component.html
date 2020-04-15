@@ -23,7 +23,7 @@
         </span>
       </p>
     </div>
-    <div class="field is-pulled-right">
+    <div class="field" style="display: flex; justify-content: flex-end;">
       <p class="control">
         <button class="button is-success has-background-primary"
           (click)="onSignupButtonClicked(emailInput.value,pwInput.value)">
@@ -31,6 +31,7 @@
         </button>
       </p>
     </div>
-
+    <br>
+    <p>Already have an account? <a routerLink='/login'>Login</a> </p>
   </div>
 </div>

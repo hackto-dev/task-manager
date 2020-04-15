@@ -10,15 +10,15 @@ import { EditTaskComponent } from './pages/edit-task/edit-task.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/lists', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'new-list', component: NewListComponent },
   { path: 'edit-list/:listId', component: EditListComponent },
-  { path: 'edit-task/:taskId', component: EditTaskComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'signup', component: SignupPageComponent },
   { path: 'lists', component: TaskViewComponent },
   { path: 'lists/:listId', component: TaskViewComponent },
   { path: 'lists/:listId/new-task', component: NewTaskComponent },
+  { path: 'lists/:listId/edit-task/:taskId', component: EditTaskComponent }
 ];
 
 @NgModule({
